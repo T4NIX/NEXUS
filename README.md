@@ -36,3 +36,9 @@ Rather than executing natural-language database queries synchronously, **NEXUS**
   ### 2. Artificial Intelligence (AI / NLP) Pipeline
 - **Google Gemini API**: `gemini-2.5-flash` model with system instructions and DDL context injection.
 - **Offline Fallback Engine**: Smart mock pattern translator ensuring 100% test reliability even without an API key.
+
+- ### 3. Database Management Systems (DBMS) Engine
+- **Relational Schema**: University Academic & Examination System (`departments`, `students`, `courses`, `enrolments`, `marks`).
+- **Database Views**: Schema context isolation using `vw_student_performance` to expose domain data while hiding system metadata tables (`nexus_jobs`, `nexus_queries`, `nexus_users`).
+- **AST Security Validator**: Parse & enforce read-only `SELECT` rules via `sqlglot`. Blocks `DROP`, `DELETE`, `UPDATE`, `INSERT`, `ALTER`, `TRUNCATE`, and multi-statement injection.
+- **ACID Transactions**: Atomic updating of job completion status + query result metadata in a single transaction.
