@@ -25,3 +25,14 @@ Rather than executing natural-language database queries synchronously, **NEXUS**
 ```
 
 ---
+## 🔬 Domain Integrations
+
+  \### 1. Operating Systems (OS) Engine
+- **Process Control Block (PCB)**: Tracks PID, status, priority, burst ticks, turnaround time ($TAT = T_{comp} - T_{arr}$), waiting time ($WT = TAT - T_{burst}$), context switches.
+- **Multi-Policy Scheduler**: Supports **FCFS**, **SJF (Shortest Job First)**, **Priority Scheduling**, and **Round Robin** (with configurable time quantum).
+- **Concurrency Control**: Multi-threaded Worker Cluster (Worker-1, Worker-2, Worker-3) using **Mutex Locks** (prevent double claiming) and **Semaphores** (connection pool throttling).
+- **Deadlock Detection**: Resource Allocation Graph (RAG) tracking thread-resource dependencies with cycle detection algorithms.
+
+  ### 2. Artificial Intelligence (AI / NLP) Pipeline
+- **Google Gemini API**: `gemini-2.5-flash` model with system instructions and DDL context injection.
+- **Offline Fallback Engine**: Smart mock pattern translator ensuring 100% test reliability even without an API key.
